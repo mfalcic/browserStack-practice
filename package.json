@@ -10,6 +10,6 @@
     "mocha-allure-reporter": "^1.4.0"
   },
   "scripts": {
-    "cy:ui": "cypress run --spec cypress/e2e/ui/*.js --browser chrome headed"
+    "cy:ui": "cypress run --spec cypress/e2e/ui/*.js --browser chrome"
 }
 }
