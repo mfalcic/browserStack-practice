@@ -9,6 +9,7 @@
     "esbuild": "^0.19.11"
   },
   "scripts": {
-    "cy:ui": "cypress run --spec cypress/e2e/ui/*.js --browser chrome"
+    "cy:ui": "cypress run --browser chrome --spec cypress/e2e/ui/*.js ",
+    "cy:ui:edge": "cypress run --spec cypress/e2e/ui/*.js --browser chrome"
   }
 }
