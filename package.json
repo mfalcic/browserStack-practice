@@ -10,13 +10,5 @@
   },
   "scripts": {
     "cy:ui": "cypress run --spec cypress/e2e/ui/*.js --browser chrome"
-  },
-  "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
-    "@cypress/browserify-preprocessor": "^3.0.2"
-  },
-  "cypress-cucumber-preprocessor":{
-    "nonGlobalStepDefinitions":true,
-    "step_definitions":"cypress/e2e/ui/features"
   }
 }
