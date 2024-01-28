@@ -3,7 +3,7 @@ pipeline{
     agent any
 
     parameters{
-        string(name: 'SPEC',choice:['cy:ui','cy:ui:edge'],defaultValue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
+        string(name: 'SPEC', choices:['cy:ui','cy:ui:edge'],defaultValue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
         choice(name: 'BROWSER', choices: ['chrome','edge','firefox'],description: "Choice the browser where you want to execute your scripts")
     }
 
@@ -22,7 +22,7 @@ pipeline{
             steps{
                 bat "npm i"
                 // bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                bat "nom run ${SPEC}"
+                bat "npm run ${SPEC}"
             }
         }
         stage('Deploying'){
