@@ -3,7 +3,8 @@ pipeline{
     agent any
 
     parameters{
-        choice(name: 'SPEC', choices:['cy:browserstack','cy:ui','cy:ui:edge'], description: "Choice the scripts path that you want to execute")
+        choice(name: 'SPEC', choices:['cy:ui','cy:ui:edge'], description: "Choice the scripts path that you want to execute")
+        choice(name: 'BROWSER', choices: ['chrome','edge','firefox'],description: "Choice the browser where you want to execute your scripts")
     }
 
     options{
@@ -13,22 +14,21 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "install dependecies"
-                bat "npm i"
+                echo "Building the application"
             }
 
         }
         stage('Testing'){
             steps{
-                
+                bat "npm i"
                 // bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                bat "npm run ${SPEC}" 
+                bat "npm run ${SPEC} --browser ${BROWSER}" 
             }
         }
         stage('Parallelization'){
             steps{
                 echo "Run test with browserStack Automate featue in parallel env and browsers."
-                bar "browserstack-cypress run"
+                bar "npm run cy:browserstack"
             }
 
         }
