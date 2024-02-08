@@ -1,5 +1,4 @@
-const bundler  = require('@bahmutov/cypress-esbuild-preprocessor')
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
@@ -32,10 +31,9 @@ module.exports = defineConfig({
       "embeddedScreenshots": true,
       "inlineAssets": true,
       },
-      "video": false,
+      "video": true,
     setupNodeEvents(on, config) {
-      on('file:preprocessor', bundler())
-      require('cypress-mochawesome-reporter/plugin')(on);
+      //require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
   },
