@@ -22,12 +22,13 @@ pipeline{
             steps{
                 bat "npm i"
                 // bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                bat "npm run ${SPEC}"
+                bat "npm run ${SPEC} --browser ${BROWSER}" 
             }
         }
-        stage('Deploying'){
+        stage('Parallelization'){
             steps{
-                echo "Deploying the application"
+                echo "Run test with browserStack Automate featue in parallel env and browsers."
+                bar "browserstack-cypress run"
             }
 
         }

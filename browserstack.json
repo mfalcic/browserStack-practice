@@ -1,0 +1,47 @@
+{
+    "auth": {
+        "username": "milanfalcic_WB4N6X",
+        "access_key": "5E9W2pf5yWbV7s8wUARM"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "firefox",
+            "os": "OS X Mojave",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "os": "OS X Big Sur",
+            "browser": "webkit",
+            "versions": ["latest", "latest-1", "latest-2"]
+          },
+        {
+            "browser": "edge",
+            "os": "OS X Catalina",
+            "versions": ["latest"]
+        }   
+    ],
+    "run_settings": {
+        "cypress_config_file": "./cypress.config.js",
+        "cypress_version": "13.6.3",
+        "project_name": "OrangeHM browserStack integration",
+        "build_name": "Build no: 1",
+        "exclude": [],
+        "parallels": "5",
+        "headless": true
+    },
+    "connection_settings": {
+        "local": false
+    },
+    "disable_usage_reporting": true
+}
